@@ -5,7 +5,6 @@ const exphbs=require('express-handlebars');
 const passport=require('passport');
 const session=require('express-session');
 const MongoStore=require('connect-mongo');
-
 // Config
 
 const dotenv=require('dotenv');
@@ -31,7 +30,7 @@ const register_route=require('./routes/registration');
 
 const User=require('./models/user_schema');
 
-const passport_initialize=require('./utils/passport');
+const passport_initialize = require('./utils/passport');
 passport_initialize(passport,email=>User.findOne({email:email})
 ,id=>User.findOne({id:id}));
 
